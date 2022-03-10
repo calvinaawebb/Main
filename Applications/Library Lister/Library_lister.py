@@ -45,13 +45,11 @@ class setup:
         with open(file, "w") as f:
             js.dump(dict, f)
 
-    def add_entry(self):
-        list.list_box1.insert(tk.END, entry_var.get())
-
     def raise_frame(self, frame):
         frame.tkraise()
 
 set = setup()
+
 
 entry1 = tk.Entry(home, width=116, textvariable=entry_var)
 entry1.place(x=900,y=500,height=25)
@@ -69,10 +67,13 @@ class buttons:
     def __init__(self):
         self.button1 = tk.Button(home, text="Home", font=("Arial", 25), bd=5, bg=light_purple, fg=darker_purple)
         self.button1.place(x=10,y=10)
-        self.button2 = tk.Button(home, command=set.add_entry(), text="Add Entry", font=("Arial", 25), bd=5, bg=light_purple, fg=darker_purple)
+        self.button2 = tk.Button(home, command=self.add_entry(), text="Add Entry", font=("Arial", 25), bd=5, bg=light_purple, fg=darker_purple)
         self.button2.pack()
         self.button2.update()
         self.button2.place(x=width-(self.button2.winfo_width()+10),y=10)
+
+    def add_entry(self):
+        list.list_box1.insert(tk.END, entry_var.get())
 
 button = buttons()
 
