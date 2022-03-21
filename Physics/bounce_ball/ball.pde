@@ -1,5 +1,5 @@
 public class Ball {
-  
+
   float xpos;
   float ypos;
   float cwid;
@@ -7,7 +7,7 @@ public class Ball {
   float radius;
   float ySpeed;
   float xSpeed;
-  
+
   Ball(int xpos, int ypos, int cwid, int chei) {
     this.xpos = xpos;
     this.ypos = ypos;
@@ -19,23 +19,39 @@ public class Ball {
     this.xSpeed = 0;
     render();
   }
-  
+
   void render() {
     fill(0);
     //ellipseMode(RADIUS);
-    ellipse(this.xpos, this.ypos, this.cwid, this.chei);
+    ellipse(xpos, ypos, cwid, chei);
   }
-  
+
   void move() {
-    //this.xSpeed = 5;
-    this.ySpeed += gravity;
-    this.ypos += this.ySpeed;
-    this.xpos += this.xSpeed;
+    noStroke();
+    
+    xSpeed = 10;
+    ySpeed += gravity;
+    ypos += ySpeed;
+    xpos += xSpeed;
     System.out.println(cwid);
     if (ypos >= height -100-radius) {
-      this.ypos = height - 100 - radius;
-      this.ySpeed *= -0.5;
+      ypos = height - 100 - radius;
+      ySpeed *= -0.85;
       //this.xSpeed *= 0.75;
+      if (xpos >= width/2 && xpos <= width/2+100) {
+        ySpeed *= 10;
+      }
+    } else if (ypos <= 0 +radius) {
+      ypos = 0+radius;
+      ySpeed *= -0.85;
     }
+    if (xpos >= width) {
+      xpos = 0;
+    }
+  }
+
+  void velo() {
+    stroke(255);
+    line(xpos, ypos, xpos+xSpeed*5, ypos+ySpeed*5);
   }
 }
