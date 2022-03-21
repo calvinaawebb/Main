@@ -1,5 +1,6 @@
 class Player {
 
+  // player variables
   float xpos;
   float ypos;
   float radius;
@@ -8,6 +9,10 @@ class Player {
   String classType;
   color rcolor;
   
+  // gun variables
+  float gx;
+  float gy;
+  float gRad;
 
   Player(float xpos, float ypos, float radius, float speed, String classType, color rcolor) {
     this.xpos = xpos;
@@ -17,6 +22,7 @@ class Player {
     speeD = sqrt((speed*speed)/2);
     this.classType = classType;
     this.rcolor = rcolor;
+    gRad = this.radius/5;
   }
   
   void move() {
@@ -50,5 +56,14 @@ class Player {
   void render() {
     fill(this.rcolor);
     ellipse(this.xpos, this.ypos, this.radius, this.radius);
+    gun();
+  }
+  
+  void gun() {
+    float dist = this.radius + gRad + 10; 
+    gx = this.xpos + (dist*cos(acos(mouseX/dist)));
+    gy = this.ypos + (dist*sin(acos(mouseY/dist)));
+    println(gx, gy);
+    ellipse(gx,gy,gRad,gRad);
   }
 }
