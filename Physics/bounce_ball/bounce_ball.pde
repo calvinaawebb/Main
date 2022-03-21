@@ -14,6 +14,8 @@ public static float gravity = 1;
 public static int max_balls = 500;
 public static int ball_counter = 0;
 
+public boolean vel = true;
+
 
 //public static font = loadFont();
 
@@ -33,11 +35,15 @@ void draw() {
   } else {
     // add fade out
     stage();
+    tramp();
     start.render();
     start.drag();
     for (int i=0;i<ball_counter;i++) {
       balls[i].render();
       balls[i].move();
+      if (vel) {
+        balls[i].velo();
+      }
     }
     cursor();
   }
@@ -67,4 +73,9 @@ void opening() {
 void stage() {
   fill(primary);
   rect(0, height-100, width, 1000);
+}
+
+void tramp() {
+  fill(secondary);
+  rect(width/2, height-115, 100, 100);
 }
