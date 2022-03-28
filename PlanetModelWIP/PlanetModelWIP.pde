@@ -1,10 +1,5 @@
 import processing.sound.*;
-ArrayList<Player> temp = new ArrayList<Player>();
-
-public PImage base;
-public PImage blaster;
-public PImage map;
-public PImage bullet;
+Player temp = new Player(width/2, height/2, 50, 5, "gay",color(255,0,0));
 
 public boolean[] keyState = new boolean[4];
 
@@ -13,19 +8,12 @@ public color back = 128;
 void setup() {
   fullScreen();
   frameRate(60);
-  imageMode(CENTER);
-  map = loadImage("map.png");
-  base = loadImage("base.png");
-  blaster = loadImage("blaster.png");
-  temp.add(new Player(width/2, height/2, 50, 5, "gay", new PVector(512*10, 512*10)));
 }
 
 void draw() {
   background(back);
-  for (int i=0; i<temp.size(); i++) {
-    temp.get(i).render();
-    temp.get(i).move();
-  }
+  temp.render();
+  temp.move();
 }
 
 void keyPressed() {

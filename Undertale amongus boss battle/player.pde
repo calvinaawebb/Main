@@ -7,24 +7,24 @@ class Player {
   float speeD;
   String classType;
   String basen;
+  PImage base;
   
   PVector mousePV = new PVector(mouseX, mouseY);
 
   // gun variables
   PVector g = new PVector();
+  PImage blaster;
   String blastern;
   int gRad;
-  
-  // map variables
-  PVector mapSize;
 
-  Player(float xpos, float ypos, int radius, float speed, String classType, PVector mapSize) {
+  Player(float xpos, float ypos, int radius, float speed, String classType, String basen, String blastern) {
     pos = new PVector(xpos, ypos);
     this.radius = radius;
     this.speed = speed;
-    this.mapSize = mapSize;
     speeD = sqrt((speed*speed)/2);
     this.classType = classType;
+    this.basen = basen;
+    this.blastern = blastern;
     gRad = this.radius;
   }
 
@@ -57,8 +57,7 @@ class Player {
   }
 
   void render() {
-    println(this.pos.x, this.pos.y);
-    image(base,this.pos.x, this.pos.y, this.radius, this.radius);
+    image(base,this.pos.x, this.pos.y);
     println(radians(angle(pos, mousePV)));
     mousePV = new PVector(mouseX, mouseY);
     gun(radians(angle(pos, mousePV))+radians(180));
@@ -75,8 +74,7 @@ class Player {
     pushMatrix();
     translate(g.x,g.y);
     rotate(ang-radians(90));
-    image(blaster,0, 0, gRad,gRad);
-    if mousePressed
+    image(blaster,0, 0);
     popMatrix();
     println("out gun");
   }
@@ -109,5 +107,12 @@ class Player {
     */
     println("out angle");
     return e;
+  }
+  void imageLoad() {
+    base = loadImage(basen);
+    blaster = loadImage(blastern);
+    base.resize(this.radius,this.radius);
+    blaster.resize(gRad,gRad);
+    imageMode(CENTER);
   }
 }
