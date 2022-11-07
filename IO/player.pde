@@ -76,7 +76,7 @@ class Player {
     translate(g.x,g.y);
     rotate(ang-radians(90));
     image(blaster,0, 0, gRad,gRad);
-    if mousePressed
+    //if mousePressed
     popMatrix();
     println("out gun");
   }

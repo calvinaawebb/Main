@@ -17,7 +17,7 @@ void setup() {
   map = loadImage("map.png");
   base = loadImage("base.png");
   blaster = loadImage("blaster.png");
-  temp.add(new Player(width/2, height/2, 50, 5, "gay", new PVector(512*10, 512*10)));
+  temp.add(new Player(width/2, height/2, 150, 5, "gay", new PVector(512*10, 512*10)));
 }
 
 void draw() {
