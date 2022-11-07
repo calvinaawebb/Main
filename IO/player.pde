@@ -7,14 +7,14 @@ class Player {
   float speeD;
   String classType;
   String basen;
-  
+
   PVector mousePV = new PVector(mouseX, mouseY);
 
   // gun variables
   PVector g = new PVector();
   String blastern;
   int gRad;
-  
+
   // map variables
   PVector mapSize;
 
@@ -76,11 +76,23 @@ class Player {
     translate(g.x,g.y);
     rotate(ang-radians(90));
     image(blaster,0, 0, gRad,gRad);
-    //if mousePressed
+    if (mousePressed) {
+      bullet(ang);
+    }
     popMatrix();
     println("out gun");
   }
-  
+
+  void hammer(float ang) {
+    println(this.pos.x);
+    float dist = this.radius + gRad + 10;
+    println(this.pos.y);
+    g.x = this.pos.x + (dist*cos(ang));
+    g.y = this.pos.y + (dist*sin(ang));
+    println(g.x, g.y);
+    image(blaster,g.x, g.y);
+  }
+
   void bullet(float ang) {
     println(this.pos.x);
     float dist = this.radius + gRad + 10;
