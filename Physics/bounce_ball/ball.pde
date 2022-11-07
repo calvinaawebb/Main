@@ -1,56 +1,58 @@
 public class Ball {
 
-  float xpos;
-  float ypos;
+  public PVector coords;
   float cwid;
   float chei;
   float radius;
-  float ySpeed;
-  float xSpeed;
+  public PVector speed;
 
-  Ball(int xpos, int ypos, int cwid, int chei) {
-    this.xpos = xpos;
-    this.ypos = ypos;
+  Ball(float xpos, float ypos, float cwid, float chei) {
+    coords = new PVector(xpos, ypos);
     this.cwid = cwid;
     this.chei = chei;
-    this.ySpeed = ySpeed;
-    this.xSpeed = xSpeed;
+    speed = new PVector();
     this.radius = cwid/2;
-    this.xSpeed = 0;
+    speed.x = 10;
     render();
   }
 
   void render() {
     fill(0);
     //ellipseMode(RADIUS);
-    ellipse(xpos, ypos, cwid, chei);
+    ellipse(coords.x, coords.y, cwid, chei);
   }
 
-  void move() {
+  void move(float t) {
     noStroke();
-    xSpeed = 10;
-    ySpeed += gravity;
-    ypos += ySpeed;
-    xpos += xSpeed;
-    System.out.println(cwid);
-    if (ypos >= height -100-radius) {
-      ypos = height - 100 - radius;
-      ySpeed *= -0.85;
-      //this.xSpeed *= 0.75;
-      if (xpos >= width/2 && xpos <= width/2+100) {
-        ySpeed *= 10;
+    speed.y += gravity/t;
+    coords.y += speed.y/t;
+    coords.x += speed.x/t;
+    if (coords.y >= height -100-radius) {
+      coords.y = height - 100 - radius;
+      speed.y *= -0.85;
+      speed.x *= 0.95;
+      /*
+      tramp:
+      if (coords.x >= width/2 && coords.x <= width/2+100) {
+        speed.y *= 2;
+        speed.x *= 1.5;
       }
-    } else if (ypos <= 0 +radius) {
-      ypos = 0+radius;
-      ySpeed *= -0.85;
+      */
+    } else if (coords.y <= 0 +radius) {
+      coords.y = 0+radius;
+      speed.y *= -0.85;
     }
-    if (xpos >= width) {
-      xpos = 0;
+    if (coords.x >= width) {
+      coords.x = width - 25;
+      speed.x *= -0.50;
+    } else if (coords.x <= 0) {
+        coords.x = radius;
+        speed.x *= -0.50;
     }
   }
 
   void velo() {
     stroke(255);
-    line(xpos, ypos, xpos+xSpeed*5, ypos+ySpeed*5);
+    line(coords.x, coords.y, coords.x+speed.x*5, coords.y+speed.y*5);
   }
 }
