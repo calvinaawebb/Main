@@ -1,12 +1,14 @@
+import _tkinter
 import os
 from tkinter import *
 from tkinter import ttk
+from tkinter import filedialog
 import pathlib
+from pathlib import *
 
 '''
 IDEAS FOR THE PROJECT:
 Make a labeling system that color codes list entries
-Make actual folder system instead of just a list(hard)
 '''
 
 
@@ -32,9 +34,11 @@ root.title("A.U.C.T.O: Anomalous Utilization Console for Technical Organization"
 root.option_add("*tearOff", False)
 
 # screen size set
+root.geometry("%dx%d" % (root.winfo_screenwidth(), root.winfo_screenheight()))
+root.update()
 width = root.winfo_width()
 height = root.winfo_height()
-root.geometry("%dx%d" % (width, height))
+print(width, height)
 
 def define_color(color):
     return "#%02x%02x%02x" % color
@@ -62,28 +66,36 @@ class main():
 
         # Tree stylizing
         style = ttk.Style(root)
-        style.configure("My.Treeview", background=darker_grey)
-
-        v = Scrollbar(root, orient='vertical')
-        v.pack(side=RIGHT, fill='y')
+        style.configure("My.Treeview", background=darker_grey, foreground=light_purple)
 
         # main area setup
-        mainArea = Text(root, wrap= WORD, yscrollcommand=v.set)
+        mainArea = Text(root, wrap= WORD)
         mainArea.place(x=int(width*0.12), y=0, width=int(width*0.88), height=int(height))
+
+        # scrollbar
+        vert = Scrollbar(root, orient='vertical', command= mainArea.yview)
+        vert.pack(side=RIGHT, fill='y')
+
+        mainArea.configure(yscrollcommand=vert.set)
 
         # Tree setup
         global tree
         tree = ttk.Treeview(root)
-        tree.configure(style="My.Treeview")
         tree.tag_configure("row", background=darker_grey)
         tree.place(x=0, y=0, width=int(width*0.12), height=height)
+        tree.bind('<Button-2>', )
+
+        # this is here because it needs to be after tree
+        #long = Scrollbar(root, orient='vertical', command=tree.yview)
+        #long.place(x=int(width*0.12), height=int(height))
+        tree.configure(style="My.Treeview") # , yscrollcommand=long.set)
 
         # file menu
         file = Menu(menubar, bg=darker_grey, fg="white", activebackground=light_purple, activeforeground=darker_grey, bd=0, borderwidth=0)
         menubar.add_cascade(menu=file, label="File")
         file.add_command(label="New File")
         file.add_command(label="Save File")
-        file.add_command(label="Open File")
+        file.add_command(label="Open Directory", command=self.open)
         file.add_command(label="Exit", command=self.quit)
 
         # window menu
@@ -97,49 +109,91 @@ class main():
         menubar.add_cascade(menu=setting, label="Setting")
         setting.add_command(label="Preferences")
 
-        '''
-        # New File
-        nf = Button(root, text="New File", bg=darker_grey, fg="white", activebackground=light_purple, activeforeground="white", bd=0, font=("Arial", 11))
-        nf.place(x=0, y=0)
-        nf.update()
+        if width == root.winfo_width():
+            print("yes")
 
-        # Edit
-        ed = Button(root, text="Edit", bg=darker_grey, fg="white", activebackground=light_purple, activeforeground="white", bd=0, font=("Arial", 11))
-        ed.place(x=nf.winfo_width(), y=0)
-        ed.update()
+    def setDir(startPath, parent, count):
+        if parent is None:
+            for item in tree.get_children():
+                tree.delete(item)
+        try:
+            dirs = [e for e in startPath.iterdir() if e.is_dir()]
+            files = [e for e in startPath.iterdir() if e.is_file()]
+            #print(type(files))
+            #print(files)
+            for j in range(len(dirs)):
+                if len(tree.get_children()) != 0:
+                    count += 1
+                print("count:" + str(count))
+                dirName = os.path.basename(dirs[j])
+                if parent == None:
+                    try:
+                        tree.insert("", index="end", iid=str(dirs[j]), text=str(dirName))
+                    except _tkinter.TclError:
+                        print(str(dirs[j]))
+                        tree.insert("", index="end", iid=str(dirs[j]), text=str(dirName))
+                        #count += 1
+                    except PermissionError:
+                        pass
+                else:
+                    try:
+                        tree.insert(parent, index="end", iid=str(dirs[j]), text=str(dirName))
+                    except _tkinter.TclError:
+                        print("parent:" + parent)
+                        print("child:" + str(dirs[j]))
+                        tree.insert(parent, index="end", iid=str(dirs[j]), text=str(dirName))
+                        #count += 1
+                    except PermissionError:
+                        pass
+                print("count:" + str(count))
+                print("addition:" + str(dirs[j]))
+                for i in range(len(files)):
+                    try:
+                        filName = os.path.basename(files[i])
+                        if parent is None:
+                            tree.insert("", index="end", iid=str(files[i]), text=str(filName))
+                        else:
+                            tree.insert(str(dirs[j]), index="end", iid=str(files[i]), text=str(filName))
+                    except _tkinter.TclError:
+                        pass
 
-        # Windows
-        win = Button(root, text="Windows", bg=darker_grey, fg="white", activebackground=light_purple, activeforeground="white", command=fileManager.clicked, bd=0, font=("Arial", 11))
-        win.place(x=(nf.winfo_width() + ed.winfo_width()), y=0)
-        win.update()
+                main.setDir(dirs[j], str(dirs[j]), count)
+            for i in range(len(files)):
+                filName = os.path.basename(files[i])
+                try:
+                    if count == 0:
+                        tree.insert("", index="end", iid=str(files[i]), text=str(filName))
+                except _tkinter.TclError:
+                    pass
+        except PermissionError:
+            pass
 
-        # Settings
-        set = Button(root, text="Settings", bg=darker_grey, fg="white", activebackground=light_purple, activeforeground="white", bd=0, font=("Arial", 11))
-        set.place(x=(nf.winfo_width() + ed.winfo_width() + win.winfo_width()), y=0)
-        set.update()
-        '''
 
-    def setDir(startPath, parent):
-        dirs = [e for e in startPath.iterdir() if e.is_dir()]
-        files = [e for e in startPath.iterdir() if e.is_file()]
-        print(type(files))
-        print(files)
-        for j in range(len(dirs)):
-            dirName = os.path.basename(dirs[j])
-            if parent == None:
-                tree.insert("", index="end", iid=str(dirName), text=str(dirName))
-            else:
-                tree.insert(parent, index="end", iid=str(dirName), text=str(dirName))
-            main.setDir(dirs[j], str(dirName))
-
-        for i in range(len(files)):
-            filName = os.path.basename(files[i])
-            tree.insert("", index="end", iid=str(filName), text=str(filName))
+    def openFile(self):
+        curItem = tree.focus()
+        if curItem.getSelectedItem().getChildCount() == 0:
+            if curItem.
 
     def quit(self):
         root.destroy()
 
+    def open(self):
+        file_path = filedialog.askdirectory()
+        print(savePath)
+        filePath = Path(file_path)
+        print(filePath)
+        main.setDir(filePath, None, 0)
+
 main()
-main.setDir(savePath, None)
+'''
+file_path = filedialog.askdirectory()
+filePath = Path(file_path)
+print(filePath)
+#filePath = file_path.replace('/', '\\')
+'''
+main.setDir(savePath, None, 0)
+
+def wait(event):
+    print("wait")
 
 root.mainloop()
