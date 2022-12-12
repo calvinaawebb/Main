@@ -69,21 +69,21 @@ class main():
         style.configure("My.Treeview", background=darker_grey, foreground=light_purple)
 
         # main area setup
-        mainArea = Text(root, wrap= WORD)
-        mainArea.place(x=int(width*0.12), y=0, width=int(width*0.88), height=int(height))
+        self.mainArea = Text(root, wrap= WORD)
+        self.mainArea.place(x=int(width*0.12), y=0, width=int(width*0.88), height=int(height))
 
         # scrollbar
-        vert = Scrollbar(root, orient='vertical', command= mainArea.yview)
+        vert = Scrollbar(root, orient='vertical', command= self.mainArea.yview)
         vert.pack(side=RIGHT, fill='y')
 
-        mainArea.configure(yscrollcommand=vert.set)
+        self.mainArea.configure(yscrollcommand=vert.set)
 
         # Tree setup
         global tree
         tree = ttk.Treeview(root)
         tree.tag_configure("row", background=darker_grey)
         tree.place(x=0, y=0, width=int(width*0.12), height=height)
-        tree.bind('<Button-2>', )
+        tree.bind('<Button-1>', self.openFile)
 
         # this is here because it needs to be after tree
         #long = Scrollbar(root, orient='vertical', command=tree.yview)
@@ -169,10 +169,19 @@ class main():
             pass
 
 
-    def openFile(self):
-        curItem = tree.focus()
-        if curItem.getSelectedItem().getChildCount() == 0:
-            if curItem.
+    def openFile(self, event):
+        print(len(self.mainArea.get("1.0", "end-1c")))
+        if len(self.mainArea.get("1.0", "end-1c")) != 0:
+            self.mainArea.delete("1.0", "end")
+        else:
+            curId = tree.focus()
+            curItem = tree.item(curId)
+            if not tree.get_children(curId) and curItem["text"].endswith(".txt"):
+                print(curId)
+                file = open(curId, "r")
+                self.mainArea.insert("1.0", file.read())
+                print("????")
+
 
     def quit(self):
         root.destroy()
