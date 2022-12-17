@@ -54,6 +54,8 @@ class main():
 
     def __init__(self):
         # Menu:
+        self.open_File = None
+        self.savedFile = True
         menubar = Menu()
         root.config(menu=menubar)
         menubar.config(bg=darker_grey, fg="white", activebackground=light_purple, activeforeground="white")
@@ -94,7 +96,7 @@ class main():
         file = Menu(menubar, bg=darker_grey, fg="white", activebackground=light_purple, activeforeground=darker_grey, bd=0, borderwidth=0)
         menubar.add_cascade(menu=file, label="File")
         file.add_command(label="New File")
-        file.add_command(label="Save File")
+        file.add_command(label="Save File",  command=self.saveFile)
         file.add_command(label="Open Directory", command=self.open)
         file.add_command(label="Exit", command=self.quit)
 
@@ -170,21 +172,59 @@ class main():
 
 
     def openFile(self, event):
-        print(len(self.mainArea.get("1.0", "end-1c")))
-        if len(self.mainArea.get("1.0", "end-1c")) != 0:
-            self.mainArea.delete("1.0", "end")
+        curId = tree.focus()
+        curItem = tree.item(curId)
+        if self.open_File != curId:
+            print(len(self.mainArea.get("1.0", "end-1c")))
+            if len(self.mainArea.get("1.0", "end-1c")) != 0:
+                self.checkFile()
+                if self.savedFile == False:
+                    pop = Label(root, text="You haven't saved your file!")
+                    pop.pack()
+                    root.after(2500, lambda: pop.pack_forget())
+                else:
+                    self.mainArea.delete("1.0", "end")
+            else:
+                if not tree.get_children(curId) and curItem["text"].endswith(".txt"):
+                    print(curId)
+                    file = open(curId, "r")
+                    self.mainArea.insert("1.0", file.read())
+                    print(self.open_File)
+                    self.open_File = curId
+                    print(self.open_File)
+
+    def checkFile(self):
+        file1 = open(self.open_File, "r")
+        inpu = file1.read()
+        self.inp = self.mainArea.get(1.0, "end-1c")
+        print("condition:")
+        print(inpu == self.inp)
+        print("file:" + inpu)
+        print("input:" + self.inp)
+        if inpu == self.inp:
+            print("in")
+            self.savedFile = True
         else:
-            curId = tree.focus()
-            curItem = tree.item(curId)
-            if not tree.get_children(curId) and curItem["text"].endswith(".txt"):
-                print(curId)
-                file = open(curId, "r")
-                self.mainArea.insert("1.0", file.read())
-                print("????")
+            print("fuck")
+            self.savedFile = False
+
+    def saveFile(self):
+        self.checkFile()
+        if self.savedFile == False:
+            file = open(self.open_File, "w")
+            file.write(self.inp)
+            self.savedFile = True;
+
 
 
     def quit(self):
-        root.destroy()
+        self.checkFile()
+        if self.savedFile == False:
+            pop = Label(root, text="You haven't saved your file!")
+            pop.pack()
+            root.after(2500, lambda: pop.pack_forget())
+        else:
+            root.destroy()
 
     def open(self):
         file_path = filedialog.askdirectory()
