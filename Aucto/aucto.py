@@ -213,7 +213,7 @@ class main():
         if self.savedFile == False:
             file = open(self.open_File, "w")
             file.write(self.inp)
-            self.savedFile = True;
+            self.savedFile = True
 
 
 
