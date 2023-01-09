@@ -1,25 +1,30 @@
-Nothing:B4(Study Skills)
+Nothing:B4(Study Skills), A1(AP Computer Science), B2(Chemistry 10 Honors)
 Something:
-	A1(AP Computer Science):
-		I have a bunch of random shit I need to complete because I didn't want to do it in class, won't take more than a day.
 	A2(AP World History Modern):
-		I still need to do like all of the 5.0 worksheets other than the first few, that needs to happen first because I also still have to do the rest of the 4.0 worksheets and I am taking a test on
-		the 4.0 stuff after the break ends so I need to have it fresh.
+		Need to finish all 4.0 worksheets except 4.1 & 4.2 & 4.3.
 	A4(Secondary Math 3 Honors):
-		I have to study for the two chapter tests, the one that we take before the end of term after the break, and the one we took at the start of break that I didn't get to retake because I was sick.
-		He hasn't put out when we are going to do the next chapter test, but right before the break he gave a lesson on something completely new, so we have to take a quiz on that not to mention the
-		preparations for the chapter test, so I should try and study for the one we took at the start of the term(Mid-Chapter 2) so that I can take it right when we get back and get a really good score.
+		The third chapter test that I thought was going on quater 2 is actually going on quarter 3, and I talked to the Mr.Meakin and he said that if I was ready for the mid chapter 2 tests that I could take it during the time on monday 1/9/2023 when the rest of the
+		students are taking the chapter 3 test going on third quarter.
 	B1(Woods):
-		He extended Wood Characteristics again but didn't reply to my email and I had no idea since he extended it over this break, I emailed him and we will see what he says.
-	B2(Chemistry 10 Honors):
-		I just have to finish the program, should be really easy to set up, only a couple of hours.
+		I just have a Measureing Assesment to do by tuesday 1/10/2023 and I also need to come in after school on probably tuesday or wednesday because I don't think I will have time to finish tuesday and the term ends when we get out wednesday.
 	B3(English 10 Honors):
-		We are pretty much closing out on everything, I missed the deadline for the 6th discussion questions but that should be fine because it was due into the break and I just need to talk to him. 						Other than that there is just the 7th disscussion questions that are due after the break.
-	
-Something(NON URGENT):
+		The only thing that I have is the 6th disscussion questions I missed by Sunday 1/8/2023.
 	A3(Chinese 1 Honors):
-		I just have Time Practice, the Introduce your favorite celebrity Assesment, and the Christmas Assesment. I also have an optional art related project for the lunar gala, I think I could easily 					make a rabbit and have the mountain house make it for me.
-
+		I just have Time Practice, the Introduce your favorite celebrity Assesment, and the Christmas Assesment by Sunday 1/8/2023. I also have an art related project for the lunar gala, I think I could easily make a rabbit and have the mountain house make it
+		for me.
+END OF TERM(1/7/2023-1/11/2023):
+	Saturday:
+		Finish preferably all of the 4.0 stuff for AP World History(DONE)
+		Finish preferably all of the chinese stuff.(DONE)
+		Finish 6th disscussion questions.(DONE)
+		Study for chapter tests as much as possible.(OPTIONAL)
+	Sunday:
+		Going day skiing this day so donate all time to practicing math.
+	Monday:
+		Do measuring assignment for woods on tuesday.
+	Tuesday:
+		
+Outdated:
 FOR THE WINTER BREAK(12/22/2022 - 1/4/2023):
 	MOST URGENT FROM IN DECENDING ORDER:
 		Finish summer school, not that hard just a powerpoint and forge some docs. DO THAT BEFORE THE 30TH AT THE LATEST.
@@ -29,7 +34,6 @@ FOR THE WINTER BREAK(12/22/2022 - 1/4/2023):
 		Study for the Chapter tests in math at the end of the break
 		Make Rabbit statue and send to toban for printing(OPTIONAL AND DOESNT NEED TO BE SUBMITTED TILL 1/11/2023)
 
-Outdated:
 FOR THE WEEKEND OF 12/3/2022 - 12/4/2022:
 	Saturday:
 		2nd Quater Math Assignment for Woods B1(By 11:59pm)
