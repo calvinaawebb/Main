@@ -215,7 +215,8 @@ class main():
             file.write(self.inp)
             self.savedFile = True
 
-
+    def newFile(self):
+        fil = open()
 
     def quit(self):
         self.checkFile()

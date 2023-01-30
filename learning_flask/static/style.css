@@ -1,0 +1,165 @@
+/*If the css doesnt update, use shift + ctrl + r on the website, it resets the browser cache which is utterly fucking stupid*/
+body {
+  background-color: #0d1117;
+  margin: 0;
+}
+h1 {
+  font-weight: 700;
+  color: darkorchid;
+}
+h2 {
+  font-weight: 700;
+  color: darkorchid;
+}
+h3 {
+  font-weight: 700;
+  color: darkorchid;
+}
+h4 {
+  font-weight: 700;
+  color: #333333;
+}
+h5 {
+    font-weight: 700;
+}
+
+.quotestyle {
+    display: inline-block;
+    text-align: center;
+    color: white;
+    width: 20%;
+    height: 80%
+    margin: 5%;
+}
+
+.navbar {
+  left: -10px;
+  background-color: #120d44;
+  position: sticky; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  /*right: 0*/
+  align: center;
+  width: 3000px; /* Full width */
+  float: bottom;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: inline-block;
+  color: white;
+  font: D-DIN-Bold,Arial,Verdana,sans-serif;
+  text-align: center;
+  padding: 31px 28px;
+  text-decoration: none;
+  transition: all .5s ease;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  font-size:18px;
+  color: grey;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color:white;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color:white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.fixed-bg {
+  height: 100%;
+  left: -10px;
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-image: url("space.png");
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  top: 0;
+}
+
+.fixed-bg1 {
+  height: 100%;
+  left: -10px;
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-image: url("spaceship.png");
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  top: 0;
+}
+
+/* Main content */
+.main {
+  margin-top: auto; /* Add a top margin to avoid content overlay */
+  margin-left: 250px;*/
+}
+.navbar img {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  /*padding: 14px 16px;*/
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  background-color:  #FFA07A;
+  position: fixed;
+  height: 1000px;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+li a:hover:not(.active) {
+  background-color: #FF4500;
+  color: white;
+}
+
+/*li a.active {
+  background-color: #4CAF50;
+  color: white;
+}*/
+
+.vert {
+  padding-top: 55px;
+  padding-left: 0px;
+}
+.body2 {
+  padding: 1200px -10px;
+  /*height: 1px;*/
+}

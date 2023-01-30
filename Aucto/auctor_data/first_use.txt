@@ -1,67 +1,12 @@
-Nothing:B4(Study Skills), A1(AP Computer Science), B2(Chemistry 10 Honors)
-Something:
-	A2(AP World History Modern):
-		Need to finish all 4.0 worksheets except 4.1 & 4.2 & 4.3.
-	A4(Secondary Math 3 Honors):
-		The third chapter test that I thought was going on quater 2 is actually going on quarter 3, and I talked to the Mr.Meakin and he said that if I was ready for the mid chapter 2 tests that I could take it during the time on monday 1/9/2023 when the rest of the
-		students are taking the chapter 3 test going on third quarter.
-	B1(Woods):
-		I just have a Measureing Assesment to do by tuesday 1/10/2023 and I also need to come in after school on probably tuesday or wednesday because I don't think I will have time to finish tuesday and the term ends when we get out wednesday.
-	B3(English 10 Honors):
-		The only thing that I have is the 6th disscussion questions I missed by Sunday 1/8/2023.
-	A3(Chinese 1 Honors):
-		I just have Time Practice, the Introduce your favorite celebrity Assesment, and the Christmas Assesment by Sunday 1/8/2023. I also have an art related project for the lunar gala, I think I could easily make a rabbit and have the mountain house make it
-		for me.
-END OF TERM(1/7/2023-1/11/2023):
-	Saturday:
-		Finish preferably all of the 4.0 stuff for AP World History(DONE)
-		Finish preferably all of the chinese stuff.(DONE)
-		Finish 6th disscussion questions.(DONE)
-		Study for chapter tests as much as possible.(OPTIONAL)
-	Sunday:
-		Going day skiing this day so donate all time to practicing math.
-	Monday:
-		Do measuring assignment for woods on tuesday.
-	Tuesday:
-		
-Outdated:
-FOR THE WINTER BREAK(12/22/2022 - 1/4/2023):
-	MOST URGENT FROM IN DECENDING ORDER:
-		Finish summer school, not that hard just a powerpoint and forge some docs. DO THAT BEFORE THE 30TH AT THE LATEST.
-		Work on Bonle and the Stuff I need to do for the competetion in may(DONE)
-		Do all APCS stuff(maybe not this and just chem because the term doesnt end for a while after break but it should be easy so maybe) and the chem program for presentation on thursday, 1/5/2023
-		Do all the worksheets for AP World, keep in mind he is accepting stuff until 1/6/2023
-		Study for the Chapter tests in math at the end of the break
-		Make Rabbit statue and send to toban for printing(OPTIONAL AND DOESNT NEED TO BE SUBMITTED TILL 1/11/2023)
+THE LIFE RULEBOOK: Concrete Structures and How to Handle Unexpected Situations
 
-FOR THE WEEKEND OF 12/3/2022 - 12/4/2022:
-	Saturday:
-		2nd Quater Math Assignment for Woods B1(By 11:59pm)
-		At least 5.1 for AP World History Modern A2(Can be done sunday but do it today)
-		Study for retaking chapter test on Thursday After school(Optional)
-			
-	Sunday:asd
-		All the Stuff for English 10 Honors B3
-		Study for retaking chapter test on Thursday After school
-		Wood Characteristics?(TBD)
-		Go and do the stuff for TSA
+1.1.1 Problem: When having a problem first address the problem head on. What is my problem, and why is it a problem?
+1.1.2 Solution: After you have identified the problem and why it exists, find the simplest answer to it.
+1.1.3 Expansion A: After you have identified the simplest answer, expand upon how you will go about implementing it.
+1.1.4 Expantion B: If you cannot find any answer to the problem, gather data to try and make a reasonable attempt.
+1.1.5 Troubleshooting: Try your now expanded upon solution and see if it works. Come at it with the attitude of someone who wants to solve the problem, if you do not you are doomed to fail.
+1.1.6 Results: Now that you have tried your solution, if you have any alterations you wish to make make them now.
 
-FOR THE WEEK OF 12/5/2022 - 12/9/2022:
-	Monday:
-		Study for retaking chapter test on Thursday After school
-		Do some of the prep for Chemistry retake(might be able to be done all or some on tuesday we will see)
+The Essential Steps to Maintain Sanity:
 
-	Tuesday:
-		Study for retaking chapter test on Thursday After school
-		Complete at least 5.2 for AP World History Modern
-
-	Wednesday:
-		Study for retaking chapter test on Thursday After school
-		Turn in 5.2
-
-	Thursday:
-		Take Chapter Test in Secondary Math 3 Honors
-		Do as much if not all of the 4.0 stuff and the 5.3 for AP World History Modern
-
-	Friday:
-		Turn in as much of the 4.0 stuff as you have and the 5.3 for AP World History Modern
+1.1.7 Walks: Take regular walks to maintain sanity. If you do not you will constantly consume entertainment and have a very short attention span, it also dulls everything else. When you take a walk it rebrightens the world around you and makes things fun.
