@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Skyline-TSA-Webmaster-2023" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dungeon-dash-game" vcs="Git" />
   </component>
 </project>

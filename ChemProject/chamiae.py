@@ -149,7 +149,7 @@ class main():
         title.pack()
         title.update()
         title.place(x=10, y=0)
-        title_sub = tk.Label(home, text="By: Calvin Webb, Olivia Zagal, Daisy Schroepfer, and Ava Brown", font=("Arial", 18), fg=light_purple, bg=light_grey)
+        title_sub = tk.Label(home, text="By: Calvin Webb", font=("Arial", 18), fg=light_purple, bg=light_grey)
         title_sub.pack()
         title_sub.update()
         title_sub.place(x=10, y=title.winfo_height() + 5)
